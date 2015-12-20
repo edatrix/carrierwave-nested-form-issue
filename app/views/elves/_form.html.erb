@@ -1,0 +1,21 @@
+<%= simple_form_for @elf do |f| %>
+  <div class="form-inputs">
+    <%= f.input :name %>
+
+    <h4 id="toy-panel">nested fields</h4>
+    <!-- nested fields for toys -->
+    <div id="toys">
+      <%= f.simple_fields_for :toys do |toy| %>
+        <%= render "toy_fields", :f => toy %>
+      <% end %>
+      <div class="links">
+        <%= link_to_add_association f, :toys do %>
+        <i class="fa fa-plus"></i> Add a toy
+        <% end %>
+      </div>
+    </div>
+  <div class="form-actions">
+    <%= f.submit(:class => "btn btn-primary") %>
+  </div>
+  </div>
+<% end %>

@@ -1,1 +1,9 @@
-<%= @elf.attributes %>
+<% @elf.toys.each do |toy| %>
+  <ul>
+    <% toy.attributes.each do |x| %>
+      <li>
+        <%= x %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

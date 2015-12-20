@@ -1,7 +1,7 @@
 class ElvesController < ApplicationController
 
   def index
-    @elf = Elf.new
+    @elves = Elf.all
   end
 
   def new
@@ -11,14 +11,16 @@ class ElvesController < ApplicationController
 
   def create
     @elf = Elf.new(elf_params)
+    @elf.save
+  end
 
-    respond_to do |format|
-      if @elf.save
-        format.html { redirect_to elves_path, :notice => "#{@elf.name} was successfully created." }
-      else
-        format.html { render :new }
-      end
-    end
+  def edit
+    @elf = Elf.find(params[:id])
+  end
+
+  def update
+    @elf = Elf.find(params[:id])
+    render :create
   end
 
   private
