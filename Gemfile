@@ -28,5 +28,6 @@ gem 'spring',        group: :development
 
 gem 'pg'
 
+gem "simple_form", "~> 3.1.0"
 gem "cocoon"
 gem "carrierwave", "~> 0.10.0"
