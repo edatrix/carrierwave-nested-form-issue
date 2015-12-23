@@ -13,12 +13,10 @@ class ElvesController < ApplicationController
   def create
     @elf = Elf.new(elf_params)
 
-    respond_to do |format|
-      if @elf.save
-        format.html { redirect_to elves_path, :notice => "#{@elf.name} was successfully created." }
-      else
-        format.html { render :new }
-      end
+    if @elf.save
+      redirect_to elves_path, :notice => "#{@elf.name} was successfully created."
+    else
+      render :new
     end
   end
 
@@ -26,12 +24,10 @@ class ElvesController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @elf.update(elf_params)
-        format.html { redirect_to elves_path, :notice => "#{@elf.name} was successfully updated." }
-      else
-        format.html { render :edit }
-      end
+    if @elf.update(elf_params)
+      redirect_to elves_path
+    else
+      render :edit
     end
   end
 

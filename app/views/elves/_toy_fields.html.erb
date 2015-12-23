@@ -1,6 +1,6 @@
 <div class="nested-fields">
-  <%= f.input :name %>
-  <%= f.input :image %>
+  <%= f.input :name, :label => "toy name" %>
+  <%= f.input :image, :label => "toy image" %>
   <%= f.input :remove_image, :as => :boolean %>
 
   <%= link_to_remove_association f do %>

@@ -1,8 +1,8 @@
 <%= simple_form_for @elf do |f| %>
   <div class="form-inputs">
-    <%= f.input :name %>
+    <%= f.input :name, :label => "elf name" %>
 
-    <h4 id="toy-panel">nested fields</h4>
+    <h4 id="toy-panel">nested fields for toys</h4>
     <!-- nested fields for toys -->
     <div id="toys">
       <%= f.simple_fields_for :toys do |toy| %>
